@@ -1,0 +1,9 @@
+{
+  "name": "html lab",
+  "short_name": "HL",
+  "theme_color": "#2196f3",
+  "background_color": "#2196f3",
+  "display": "fullscreen",
+  "scope": "/",
+  "start_url": "/viewport_change_in_one_page.html"
+}
