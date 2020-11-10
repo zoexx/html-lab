@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>cookies</title>
+	<script src="https://cdn.jsdelivr.net/npm/js-cookie@rc/dist/js.cookie.min.js"></script>
+</head>
+<body>
+<button onclick="setToken()">set token</button>
+<button>remove token</button>
+<script type="text/javascript">
+	function getTopLevelDomain(hostname = window.location.hostname) {
+	  const cs = hostname.split(".");
+	  return `${cs[cs.length - 2]}.${cs[cs.length - 1]}`;
+	}
+	function setToken() {
+		Cookies.set('token', '12312313123', {
+		    domain: getTopLevelDomain(),
+		    secure: true,
+		    sameSite: "strict"
+		})	
+	}
+	
+</script>
+</body>
+</html>
