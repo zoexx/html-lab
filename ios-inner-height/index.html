@@ -13,9 +13,7 @@
         rulerInitial.textContent += iosInnerHeight() + "px";
         windowLabel.textContent += window.innerHeight + "px";
       }
-      window.addEventListener("load", () => {
-        update();
-      });
+      window.addEventListener("load", update);
     </script>
   </head>
   <body>
@@ -28,5 +26,8 @@
     <div>
       <button onclick="update()">Update</button>
     </div>
+    <script>
+      window.addEventListener("resize", update);
+    </script>
   </body>
 </html>
