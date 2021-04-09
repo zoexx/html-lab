@@ -13,21 +13,37 @@
         rulerInitial.textContent += iosInnerHeight() + "px";
         windowLabel.textContent += window.innerHeight + "px";
       }
+      function updateOrientation() {
+        var windowLabel = document.getElementById("orientation-label");
+        windowLabel.textContent += window.innerHeight + "px";
+      }
       window.addEventListener("load", update);
     </script>
   </head>
   <body>
-    <h1>iosInnerHeight()</h1>
+    <h1>css 100vh()</h1>
     <pre><p>initial window height measurement: <span id="ruler-initial"></span></p></pre>
 
     <h1>window.innerHeight</h1>
     <pre><p>current window height measurement: <span id="win-label"></span></p></pre>
+
+    <h1>orientation window.innerHeight</h1>
+    <pre><p>current window height measurement: <span id="orientation-label"></span></p></pre>
+
+    <h1>input focus will make the window resize</h1>
+    <div style="padding-bottom: 24px">
+      <input type="text" style="font-size: 12px" placeholder="12px" />
+    </div>
+    <div style="padding-bottom: 24px">
+      <input type="text" style="font-size: 16px" placeholder="16px" />
+    </div>
 
     <div>
       <button onclick="update()">Update</button>
     </div>
     <script>
       window.addEventListener("resize", update);
+      window.addEventListener("orientationchange", updateOrientation);
     </script>
   </body>
 </html>
