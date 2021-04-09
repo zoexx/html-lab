@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>iOS Inner Height</title>
+    <link rel="stylesheet" href="./main.css" />
+    <script src="./ios-inner-height.js"></script>
+    <script>
+      function update() {
+        var rulerInitial = document.getElementById("ruler-initial");
+        var windowLabel = document.getElementById("win-label");
+        rulerInitial.textContent += iosInnerHeight() + "px";
+        windowLabel.textContent += window.innerHeight + "px";
+      }
+      window.addEventListener("load", () => {
+        update();
+      });
+    </script>
+  </head>
+  <body>
+    <h1>iosInnerHeight()</h1>
+    <pre><p>initial window height measurement: <span id="ruler-initial"></span></p></pre>
+
+    <h1>window.innerHeight</h1>
+    <pre><p>current window height measurement: <span id="win-label"></span></p></pre>
+
+    <div>
+      <button onclick="update()">Update</button>
+    </div>
+  </body>
+</html>
