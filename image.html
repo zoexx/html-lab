@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>image</title>
+	<style type="text/css">
+		.box {
+			display: flex;
+			justify-content: flex-start;
+			align-items: flex-end;
+			text-align: center;
+		}
+	</style>
+</head>
+<body>
+	<h1>window.devicePixelRatio <span id="ratio"></span></h1>
+	<div class="box">
+		<div class="item">
+			<p>240 in 240x240</p>
+			<img src="https://www.datocms-assets.com/15671/1617633682-friendly-farms.png?auto=compress&fm=png&h=240&q=75&w=240" width="240" height="240"/>
+		</div>
+		<div class="item">
+			<p>240 in 160x160</p>
+		<img src="https://www.datocms-assets.com/15671/1617633682-friendly-farms.png?auto=compress&fm=png&h=240&q=75&w=240" width="160" height="160"/>
+		</div>
+		<div class="item">
+			<p>240 in 144x144</p>
+		<img src="https://www.datocms-assets.com/15671/1617633682-friendly-farms.png?auto=compress&fm=png&h=240&q=75&w=240" width="144" height="144"/>
+		</div>
+		<div class="item">
+			<p>240 in 96x96</p>
+		<img src="https://www.datocms-assets.com/15671/1617633682-friendly-farms.png?auto=compress&fm=png&h=240&q=75&w=240" width="96" height="96"/>
+		</div>
+	</div>
+
+	<div class="box">
+		<div class="item">
+			<p>240 in 240x240</p>
+		<img src="https://www.datocms-assets.com/15671/1617633682-friendly-farms.png?auto=compress&fm=png&h=240&q=75&w=240" width="240" height="240"/>
+		</div>
+		<div class="item">
+			<p>240 in 160x160</p>
+		<img src="https://www.datocms-assets.com/15671/1617633682-friendly-farms.png?auto=compress&fm=png&h=240&q=75&w=240" width="160" height="160"/>
+		</div>
+		<div class="item">
+			<p>144 in 144x144</p>
+		<img src="https://www.datocms-assets.com/15671/1617633682-friendly-farms.png?auto=compress&fm=png&h=144&q=75&w=144" width="144" height="144"/>
+		</div>
+		<div class="item">
+			<p>144 in 96x96</p>
+		<img src="https://www.datocms-assets.com/15671/1617633682-friendly-farms.png?auto=compress&fm=png&h=144&q=75&w=144" width="96" height="96"/>
+		</div>
+	</div>
+	<script type="text/javascript">
+		function updateDeviceRatio () {
+			document.querySelector("#ratio").innerHTML = window.devicePixelRatio;
+		}
+		window.addEventListener("load", updateDeviceRatio);
+	</script>
+</body>
+</html>
