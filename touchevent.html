@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Touch Event</title>
+  </head>
+  <body>
+    <button id="item">Click Me preventDefault</button>
+    <button id="item2">Click Me non-preventDefault</button>
+    <script>
+      var $item = document.querySelector("#item");
+      $item.addEventListener("click", function (e) {
+        console.log("click1", e);
+      });
+      $item.addEventListener("touchstart", function (e) {
+        console.log("touchstart1", e);
+        e.preventDefault();
+      });
+
+      var $item2 = document.querySelector("#item2");
+      $item2.addEventListener("click", function (e) {
+        console.log("click2", e);
+      });
+      $item2.addEventListener("touchstart", function (e) {
+        console.log("touchstart2", e);
+      });
+    </script>
+  </body>
+</html>
