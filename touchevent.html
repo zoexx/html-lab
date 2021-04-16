@@ -10,6 +10,10 @@
     <button id="item">Click Me preventDefault</button>
     <button id="item2">Click Me non-preventDefault</button>
     <div id="root"></div>
+    <div id="root2"></div>
+    <!-- Load Babel -->
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <!-- Load React -->
     <script
       crossorigin
       src="https://unpkg.com/react@17/umd/react.development.js"
@@ -17,6 +21,11 @@
     <script
       crossorigin
       src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"
+    ></script>
+    <!-- Load MUI -->
+    <script
+      crossorigin
+      src="https://unpkg.com/@material-ui/core@latest/umd/material-ui.development.js"
     ></script>
     <script>
       var $item = document.querySelector("#item");
@@ -35,6 +44,21 @@
       $item2.addEventListener("touchstart", function (e) {
         console.log("touchstart2", e);
       });
+    </script>
+    <script type="text/babel">
+      const { Button } = MaterialUI;
+
+      ReactDOM.render(
+        <Button
+          variant="contained"
+          color="primary"
+          onClick={(e) => console.log(e.type)}
+          onTouchStart={(e) => console.log(e.type)}
+        >
+          MUI Button
+        </Button>,
+        document.getElementById("root2")
+      );
     </script>
     <script>
       const element = React.createElement;
