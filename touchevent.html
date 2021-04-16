@@ -9,6 +9,15 @@
   <body>
     <button id="item">Click Me preventDefault</button>
     <button id="item2">Click Me non-preventDefault</button>
+    <div id="root"></div>
+    <script
+      crossorigin
+      src="https://unpkg.com/react@17/umd/react.development.js"
+    ></script>
+    <script
+      crossorigin
+      src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"
+    ></script>
     <script>
       var $item = document.querySelector("#item");
       $item.addEventListener("click", function (e) {
@@ -26,6 +35,30 @@
       $item2.addEventListener("touchstart", function (e) {
         console.log("touchstart2", e);
       });
+    </script>
+    <script>
+      const element = React.createElement;
+
+      class ReactButton extends React.Component {
+        constructor(props) {
+          super(props);
+          this.state = { eventName: "" };
+        }
+
+        render() {
+          return element("button", {
+            onClick: (e) => this.setState({ eventName: e.type }),
+            onTouchStart: (e) => this.setState({ eventName: e.type }),
+            dangerouslySetInnerHTML: {
+              __html: "react button:" + this.state.eventName,
+            },
+            type: "button",
+          });
+        }
+      }
+
+      const domContainer = document.querySelector("#root");
+      ReactDOM.render(element(ReactButton), domContainer);
     </script>
   </body>
 </html>
