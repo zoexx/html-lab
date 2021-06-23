@@ -10,8 +10,10 @@
       function update() {
         var rulerInitial = document.getElementById("ruler-initial");
         var windowLabel = document.getElementById("win-label");
+        var windowWidthLabel = document.getElementById("win-width");
         rulerInitial.textContent += iosInnerHeight() + "px";
         windowLabel.textContent += window.innerHeight + "px";
+        windowWidthLabel.textContent += window.innerWidth + "px";
       }
       function updateOrientation() {
         var windowLabel = document.getElementById("orientation-label");
@@ -26,6 +28,9 @@
 
     <h1>window.innerHeight</h1>
     <pre><p>current window height measurement: <span id="win-label"></span></p></pre>
+
+    <h1>window.innerWidth</h1>
+    <pre><p>current window width measurement: <span id="win-width"></span></p></pre>
 
     <h1>orientation window.innerHeight</h1>
     <pre><p>current window height measurement: <span id="orientation-label"></span></p></pre>
